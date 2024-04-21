@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: desafio-sre
+  name: desafio-sre
+  namespace: applications
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: desafio-sre
+  type: NodePort
+status:
+  loadBalancer: {}
